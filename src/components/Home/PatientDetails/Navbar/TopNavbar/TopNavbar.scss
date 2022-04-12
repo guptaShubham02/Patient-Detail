@@ -1,0 +1,17 @@
+.search-box {
+    width: 100%;
+ input {
+    height: 38px;
+    outline: none;
+    border: 1px solid #5454544f;
+    border-radius: 20px;
+    padding-left: 40px;
+    width: 90%;
+ }
+ svg {
+    position: relative;
+    left: 33px;
+    top: 9px;
+    color: #b9b8b8;
+ }
+}
