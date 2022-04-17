@@ -1,0 +1,16 @@
+@media only screen and (max-width: "900px") {
+  .notes {
+    .seeAll {
+      padding-left: 10px !important;
+    }
+    .notesDate {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: "600px") {
+  .notesDate {
+    display: block !important;
+  }
+}

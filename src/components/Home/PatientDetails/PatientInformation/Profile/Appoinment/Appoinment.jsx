@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "./Appoinment.scss";
 
 const Appoinment = () => {
   const [open, setOpen] = useState(true);
@@ -46,6 +47,7 @@ const Appoinment = () => {
   return (
     <Grid
       item
+      xs={12}
       sx={{ background: "#fff", width: "92%", mt: 1, padding: "15px 10px" }}
     >
       <Box
@@ -68,11 +70,14 @@ const Appoinment = () => {
       <Box sx={{ background: "#F2F5FA", pt: 1 }}>
         <Grid container>
           <Grid item xs={6} sx={{ textAlign: "center" }}>
-          <ListItemButton
-              sx={{ maxWidth: "400px", background: "#E9EBF0", textAlign:'center' }}
+            <ListItemButton
+              sx={{
+                maxWidth: "400px",
+                background: "#E9EBF0",
+                textAlign: "center",
+              }}
             >
               <ListItemText primary="Root Canal Treatment" />
-             
             </ListItemButton>
           </Grid>
           <Grid item xs={6}>
@@ -80,7 +85,6 @@ const Appoinment = () => {
               onClick={handleClick}
               sx={{ maxWidth: "400px", background: "#fff" }}
             >
-              <ListItemIcon></ListItemIcon>
               <ListItemText primary="Show Previous Treatment" />
               {open ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
@@ -88,34 +92,31 @@ const Appoinment = () => {
         </Grid>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton sx={{ pl: 1 }}>
               <Grid container>
-                <Grid item xs={2}>
-                  {" "}
+                <Grid item xs={3} sm={2}>
                   <ListItemText
                     primary={newData.Date}
                     secondary={newData.Time}
                   />
                 </Grid>
-                <Grid item xs={3}>
-                  {" "}
+                <Grid item xs={4} sm={3}>
                   <ListItemText
                     primary="Treatment"
                     secondary={newData.Treatment}
                   />
                 </Grid>
                 <Grid item xs={3}>
-                  {" "}
                   <ListItemText primary="Dentist" secondary={newData.Dentist} />
                 </Grid>
                 <Grid item xs={2}>
-                  {" "}
                   <ListItemText primary="Nurse" secondary={newData.Nurse} />
                 </Grid>
                 <Grid
                   item
                   xs={2}
                   sx={{ color: "#0C50F2", textAlign: "center" }}
+                  className="note"
                 >
                   <Button>
                     <StickyNote2Outlined />
@@ -126,16 +127,15 @@ const Appoinment = () => {
             </ListItemButton>
           </List>
           <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton sx={{ pl: 1 }}>
               <Grid container>
-                <Grid item xs={2}>
-                  {" "}
+                <Grid item xs={3} sm={2}>
                   <ListItemText
                     primary={newData2.Date}
                     secondary={newData2.Time}
                   />
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4} sm={3}>
                   {" "}
                   <ListItemText
                     primary="Treatment"
@@ -150,13 +150,14 @@ const Appoinment = () => {
                   />
                 </Grid>
                 <Grid item xs={2}>
-                  {" "}
                   <ListItemText primary="Nurse" secondary={newData2.Nurse} />
                 </Grid>
                 <Grid
                   item
-                  xs={2}
+                  xs={0}
+                  sm={2}
                   sx={{ color: "#0C50F2", textAlign: "center" }}
+                  className="note"
                 >
                   <Button>
                     <StickyNote2Outlined />

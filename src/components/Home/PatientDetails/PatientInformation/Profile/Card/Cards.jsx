@@ -12,7 +12,7 @@ import {
 
 const Cards = ({findPatient}) => {
   return (
-    <Grid item xs={4} sx={{ textAlign: "center" }}>
+    <Grid item md={5} xs={12} sx={{ textAlign: "center", width:'100%' }}>
       <Card sx={{ padding: "20px" }}>
         <CardMedia
           component="img"

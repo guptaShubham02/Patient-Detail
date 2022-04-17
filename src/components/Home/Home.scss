@@ -8,12 +8,30 @@
         width: 90vw;
         height: 95vh;
         position: absolute;
-        // bottom: 50%;
         top: 1%;
         left: 50%;
         transform: translate(-50%);
         border-radius: 30px;
         border: 10px solid #4C5D8A;
-        overflow: hidden;
+        overflow: auto;
+    }
+}
+@media only screen and (max-width:'1200px') {
+    .body {
+        width: 95vw !important;
+    }
+}
+
+@media only screen and (max-width:'600px') {
+    .main {
+        background-color: #4C5D8A !important;
+    }
+    .body {
+        background-color: #F2F5FA;
+        width: 100vw !important;
+        height: 100vh !important;
+        top: 0% !important;
+        border-radius: 15px !important;
+        border: 5px solid #4C5D8A !important;
     }
 }

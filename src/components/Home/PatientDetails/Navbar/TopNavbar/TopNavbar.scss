@@ -1,3 +1,7 @@
+.patientButton {
+   font-size: 1.2rem !important;
+}
+
 .search-box {
     width: 100%;
  input {
@@ -6,7 +10,7 @@
     border: 1px solid #5454544f;
     border-radius: 20px;
     padding-left: 40px;
-    width: 90%;
+    max-width: 85%;
  }
  svg {
     position: relative;
@@ -14,4 +18,19 @@
     top: 9px;
     color: #b9b8b8;
  }
+}
+
+@media only screen and (max-width: 600px) {
+   .topNavbar {
+      // display: block !important;
+      .add, .notification {
+         // display: inline-block;
+      }
+   }
+   .topPatientName {
+      // display: block;
+   }
+   .searchBar {
+      display: none;
+   }
 }

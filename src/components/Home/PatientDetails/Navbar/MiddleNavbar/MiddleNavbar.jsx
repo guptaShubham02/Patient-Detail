@@ -32,24 +32,24 @@ const MiddleNavbar = ({ findPatient, patientHome }) => {
   ];
 
   return (
-    <Grid container my={2} ml={3} spacing={1}>
-      <Grid item xs={9}>
+    <Grid container my={2} ml={0} spacing={1} sx={{width:'100%', paddingLeft:'1rem'}}>
+      <Grid item lg={9} sm={7} md={8} xs={12}>
         <Stack spacing={2}>
           <Breadcrumbs
             separator="›"
             aria-label="breadcrumb"
-            sx={{ fontSize: "1.5rem" }}
+            sx={{ fontSize: "1.5rem",px:'0px' }}
           >
             {breadcrumbs}
           </Breadcrumbs>
         </Stack>
       </Grid>
-      <Grid item xs={1} sx={{ textAlign: "right" }}>
+      <Grid item lg={1} md={1} sm={1} xs={2} sx={{textAlign:'end'}}>
         <Button sx={{ background: "white", padding: "1" }}>
           <Print />
         </Button>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item lg={2} md={3} sm={4} xs={10} sx={{textAlign:'right', paddingLeft:'0px'}}>
         <Button sx={{ background: "white", padding: "1" }}>
           <ModeEdit />
           Edit Patient

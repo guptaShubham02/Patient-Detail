@@ -30,7 +30,7 @@ const PatientList = ({ patientDetailsHandler}) => {
     <Grid
       item
       className="PatientDetails"
-      xs={10}
+      xs={12}
       sx={{ overflow: "auto", height: "inherit" }}
     >
       <nav aria-label="main mailbox folders">

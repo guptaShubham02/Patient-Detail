@@ -10,6 +10,7 @@ const Home = () => {
   const [showPatients, setShowPatients] = useState(true);
   const [patientDetails, setPatientDetails] = useState([]);
   const [loadPatient, setLoadPatient] = useState([]);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     axios
@@ -35,21 +36,23 @@ const Home = () => {
 
   const findPatient = loadPatient[patientDetails];
 
+  const menuHandler = (v) => {
+    setShowMenu(v);
+  };
 
   return (
     <>
       <div className="main">
         <Grid container className="body">
-          <Menubar onClick={patientListHandler} />
+          {showMenu && <Menubar onClick={patientListHandler} menuHandler={menuHandler} />}
 
           {showPatients ? (
-            <PatientList
-              patientDetailsHandler={patientDetailsHandler}
-            />
+            <PatientList patientDetailsHandler={patientDetailsHandler} />
           ) : (
             <PatientDetails
               findPatient={findPatient}
               patientHome={patientListHandler}
+              showMenuHandler={menuHandler}
             />
           )}
         </Grid>

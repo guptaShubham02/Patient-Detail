@@ -4,14 +4,13 @@ import { Grid } from "@mui/material";
 import "./Menubar.scss";
 // import Doctors from "./Doctors";
 import MenuList from "./MenuList";
+import Modal from "../../UI/Modal";
 
-const Menubar = ({onClick}) => {
+const Menubar = ({ onClick, menuHandler }) => {
   return (
-    <Grid item xs={2} className="Menubar-section">
-      <section>
-      <MenuList onClick={onClick}/>
-      </section>
-    </Grid>
+    <Modal menuHandler={menuHandler}>
+      <MenuList onClick={onClick} menuHandler={menuHandler} />
+    </Modal>
   );
 };
 

@@ -1,0 +1,47 @@
+.content {
+  position: fixed;
+  background: white;
+  width: 30vw;
+  height: 95vh;
+  top: 1%;
+  bottom: 0;
+  z-index: 10;
+  animation: slide 0.3s;
+}
+
+.backdrop {
+  position: fixed;
+  background: #0000006e;
+  z-index: 1;
+  width: 90vw;
+  height: 95vh;
+  top: 1%;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+    .content {
+      width: 80vw;
+      height: 100vh;
+      top: 0;
+    }
+    .backdrop {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        border-radius: 0;
+    }
+  }
+  
+  @keyframes slide {
+    from {
+      opacity: 0;
+      transform: translateX(-20rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }

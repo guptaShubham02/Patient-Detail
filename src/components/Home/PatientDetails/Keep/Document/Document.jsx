@@ -20,7 +20,7 @@ import {
   Typography,
 } from "@mui/material";
 import axios from "axios";
-import { Scrollbars } from "react-custom-scrollbars-2";
+import './Document.scss'
 
 const Document = () => {
   const [showDocument, setShowDocument] = useState();
@@ -40,97 +40,95 @@ const Document = () => {
   if (showDocument == null || showDocument === 0) {
     return;
   }
-  const newData = showDocument[1];
   const newData2 = showDocument[2];
   const newData3 = showDocument[3];
 
   return (
-    <Grid>
-         <Scrollbars style={{ width: '100%', height: 300 }}>
-      <Card
-        sx={{
-          padding: "12px",
-          mt: 4,
-          mr: 3,
-          height: "255px",
-          overflow: "auto",
-        }}
-      >
-        <div>
-          <Typography variant="h6" sx={{ display: "inline-block" }}>
-            Files/Documents
-          </Typography>
-          <Button sx={{ textAlign: "right", paddingLeft: "100px" }}>
-            <AddCircle />
-            Add files
-          </Button>
-        </div>
-        <Card sx={{ mb: 2 }}>
-          <List>
-            <ListItem
-              secondaryAction={
-                <>
-                  <IconButton edge="end" aria-label="delete">
-                    <Delete />
-                  </IconButton>
-                  <IconButton edge="end" aria-label="delete">
-                    <DownloadForOfflineOutlined />
-                  </IconButton>
-                </>
-              }
-            >
-              <ListItemAvatar>
-                <ListItemIcon>
-                  <StickyNote2Outlined />
-                </ListItemIcon>
-              </ListItemAvatar>
-              <ListItemText
-                primary={`${newData.name.split(" ").join("")}.pdf`}
-              />
-            </ListItem>
-          </List>
+    <Grid item md={6} lg={12} sm={6} xs={12}>
+        <Card
+          sx={{
+            padding: "12px",
+            mt: 4,
+            mx:2,
+            height: "255px",
+            overflow: "auto",
+          }}
+          className='documentBody'
+        >
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography variant="h6">Files/Documents</Typography>
+            <Button sx={{ textAlign: "right" }}>
+              <AddCircle />
+              Add files
+            </Button>
+          </div>
+          <Card sx={{ mb: 2 }}>
+            <List>
+              <ListItem
+                secondaryAction={
+                  <>
+                    <IconButton edge="end" aria-label="delete">
+                      <Delete />
+                    </IconButton>
+                    <IconButton edge="end" aria-label="delete">
+                      <DownloadForOfflineOutlined />
+                    </IconButton>
+                  </>
+                }
+                sx={{ pr: "0px", pl: "6px" }}
+              >
+                <ListItemAvatar sx={{ minWidth: "40px" }}>
+                  <ListItemIcon sx={{ minWidth: "40px" }}>
+                    <StickyNote2Outlined />
+                  </ListItemIcon>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={`${newData3.name.split(" ").join("")}.pdf`}
+                />
+              </ListItem>
+            </List>
+          </Card>
+          <Card sx={{ mb: 2 }}>
+            <List>
+              <ListItem
+                secondaryAction={
+                  <>
+                    <IconButton edge="end" aria-label="delete">
+                      <Delete />
+                    </IconButton>
+                    <IconButton edge="end" aria-label="delete">
+                      <DownloadingOutlined sx={{ color: "#0D53FC" }} />
+                    </IconButton>
+                  </>
+                }
+                sx={{ pr: "0px", pl: "6px" }}
+              >
+                <ListItemAvatar sx={{ minWidth: "40px" }}>
+                  <ListItemIcon sx={{ minWidth: "40px" }}>
+                    <StickyNote2Outlined />
+                  </ListItemIcon>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={`${newData2.name.split(" ").join("")}.pdf`}
+                />
+              </ListItem>
+            </List>
+          </Card>
+          <Card>
+            <List>
+              <ListItem secondaryAction="123kb" sx={{ pr: "0px", pl: "6px" }}>
+                <ListItemAvatar sx={{ minWidth: "40px" }}>
+                  <ListItemIcon sx={{ minWidth: "40px" }}>
+                    <StickyNote2Outlined />
+                  </ListItemIcon>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={`${newData3.name.split(" ").join("")}.pdf`}
+                />
+              </ListItem>
+            </List>
+          </Card>
         </Card>
-        <Card sx={{ mb: 2 }}>
-          <List>
-            <ListItem
-              secondaryAction={
-                <>
-                  <IconButton edge="end" aria-label="delete">
-                    <Delete />
-                  </IconButton>
-                  <IconButton edge="end" aria-label="delete">
-                    <DownloadingOutlined sx={{ color: "#0D53FC" }} />
-                  </IconButton>
-                </>
-              }
-            >
-              <ListItemAvatar>
-                <ListItemIcon>
-                  <StickyNote2Outlined />
-                </ListItemIcon>
-              </ListItemAvatar>
-              <ListItemText
-                primary={`${newData2.name.split(" ").join("")}.pdf`}
-              />
-            </ListItem>
-          </List>
-        </Card>
-        <Card>
-          <List>
-            <ListItem secondaryAction="123kb">
-              <ListItemAvatar>
-                <ListItemIcon>
-                  <StickyNote2Outlined />
-                </ListItemIcon>
-              </ListItemAvatar>
-              <ListItemText
-                primary={`${newData3.name.split(" ").join("")}.pdf`}
-              />
-            </ListItem>
-          </List>
-        </Card>
-      </Card>
-      </Scrollbars>
     </Grid>
   );
 };

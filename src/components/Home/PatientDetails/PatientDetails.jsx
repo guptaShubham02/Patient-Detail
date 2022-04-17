@@ -7,10 +7,10 @@ import "./PatientDetails.scss";
 import Navbar from "./Navbar/Navbar";
 import Keep from "./Keep/Keep";
 
-const PatientDetails = ({ findPatient,patientHome }) => {
+const PatientDetails = ({ findPatient,patientHome,showMenuHandler }) => {
   return (
-    <Grid item className="PatientDetails" xs={10}>
-      <Navbar findPatient={findPatient} patientHome={patientHome} />
+    <Grid item className="PatientDetails" xs={12}>
+      <Navbar findPatient={findPatient} patientHome={patientHome} showMenuHandler={showMenuHandler}/>
       <Grid container>
         <PatientInformation findPatient={findPatient} />
         <Keep/>

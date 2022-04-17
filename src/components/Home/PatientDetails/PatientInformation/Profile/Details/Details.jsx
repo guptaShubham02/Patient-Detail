@@ -4,7 +4,7 @@ import React from "react";
 const Details = ({findPatient}) => {
   const newData = (Object.values(findPatient));
   return (
-    <Grid item xs={7} sx={{ textAlign: "center" }}>
+    <Grid item md={7} xs={12} sx={{ textAlign: "center" }}>
       <Card sx={{ padding: "9px" }}>
         <CardContent>
           <Grid container>
